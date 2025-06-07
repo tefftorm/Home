@@ -50,7 +50,11 @@
   text-transform: uppercase;
   text-align: center;
 }
-
+canvas {
+  width: 100vw;    /* Ancho igual al 100% del viewport (pantalla) */
+  height: 100vh;   /* Alto igual al 100% del viewport */
+  display: block;  /* Evita espacios en línea que puede crear un canvas por defecto */
+}
 /* MEDIA QUERY para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
   #credits, #instructions {
