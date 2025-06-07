@@ -9,24 +9,27 @@
   outline: none;
   background-color: #000000;
   cursor: move;
-  /* fallback if grab cursor is unsupported */
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
+
+  /* Para móviles: ajustar tamaño y evitar overflow */
+  /* Si hay elementos dentro con tamaño fijo, considerar escalarlos aquí */
 }
 
+/* Créditos al pie */
 #credits {
   position: absolute;
   width: 100%;
   margin: auto;
-  bottom: 0;
-  margin-bottom: 20px;
+  bottom: 20px; /* simplificado */
   font-family: "Open Sans", sans-serif;
   color: #544027;
   font-size: 0.7em;
   text-transform: uppercase;
   text-align: center;
 }
+
 #credits a {
   color: #7beeff;
 }
@@ -35,7 +38,8 @@
   color: #ff3434;
 }
 
-#instructions{
+/* Instrucciones encima de créditos */
+#instructions {
   position: absolute;
   width: 100%;
   margin: auto;
@@ -45,4 +49,17 @@
   font-size: 0.7em;
   text-transform: uppercase;
   text-align: center;
+}
+
+/* MEDIA QUERY para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  #credits, #instructions {
+    font-size: 0.5em; /* reducir tamaño de texto */
+    padding: 0 10px; /* algo de margen lateral */
+  }
+  /* Ajustar el contenedor webgl si fuera necesario */
+  .webgl {
+    /* Por ejemplo, evitar overflow horizontal */
+    overflow: hidden;
+  }
 }
